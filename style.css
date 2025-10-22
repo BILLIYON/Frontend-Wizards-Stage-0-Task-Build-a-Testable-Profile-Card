@@ -17,17 +17,17 @@ body {
 }
 
 /* 🧩 Profile Card Container */
-article[data-testid="test-profile-card"] {
-  background: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  padding: 30px;
-  width: min(95%, 700px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+[data-testid="test-profile-card"] {
+  background-color: #fff; /* This gives the white background */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 400px;
+  width: 90%;
+  height: auto; /* expand naturally with text */
+  box-sizing: border-box;
+  overflow-wrap: break-word; /* prevent text overflow */
 }
 
 article[data-testid="test-profile-card"]:hover {
