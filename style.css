@@ -16,14 +16,14 @@ article {
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  padding: 20px;
-  max-width: 400px;
-  width: 90%;
+  padding: 30px;
+  width: min(95%, 600px); /* allow up to 600px but responsive */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
+
 
 img {
   border-radius: 50%;
