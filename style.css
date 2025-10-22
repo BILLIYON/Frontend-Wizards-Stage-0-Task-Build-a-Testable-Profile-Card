@@ -1,85 +1,161 @@
-/* General page setup */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #74ABE2, #5563DE);
+/* 🌈 Global Styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
-}
-
-/* Card container */
-.container {
-  background: white;
-  margin: 60px auto;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  max-width: 800px;
-  width: 90%;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-/* Article content */
-h1, h2, h3 {
   color: #333;
-  line-height: 1.3;
-  margin-bottom: 16px;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 2rem;
-  color: #2E3192;
+/* 🧩 Profile Card Container */
+article[data-testid="test-profile-card"] {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  width: min(95%, 700px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-p {
+article[data-testid="test-profile-card"]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* 🧍‍♂️ Avatar Section */
+figure {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img[data-testid="test-user-avatar"] {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #66a6ff;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+img[data-testid="test-user-avatar"]:hover {
+  transform: scale(1.05);
+  border-color: #4a90e2;
+}
+
+/* ✍️ Text and Headers */
+h2[data-testid="test-user-name"] {
+  font-size: 1.8rem;
+  color: #1b4f72;
+  text-align: center;
+}
+
+p[data-testid="test-user-bio"] {
+  font-size: 1rem;
+  text-align: center;
   color: #555;
   line-height: 1.6;
-  font-size: 1rem;
-  margin-bottom: 16px;
+  max-width: 600px;
 }
 
-/* Links */
-a {
-  color: #2E86DE;
+/* ⏰ Time Display */
+#time {
+  display: inline-block;
+  font-weight: 600;
+  color: #0077cc;
+  background: rgba(102, 166, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 6px;
+  margin-left: 5px;
+}
+
+/* 🌐 Social Links */
+nav[data-testid="test-user-social-links"] ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+}
+
+nav[data-testid="test-user-social-links"] a {
   text-decoration: none;
-  transition: color 0.3s;
+  color: #fff;
+  background: linear-gradient(45deg, #4facfe, #00f2fe);
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
 }
 
-a:hover {
-  color: #1B4F72;
-}
-
-/* Buttons */
-button {
-  background: linear-gradient(90deg, #2E3192, #1BFFFF);
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-button:hover {
+nav[data-testid="test-user-social-links"] a:hover,
+nav[data-testid="test-user-social-links"] a:focus {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
   transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive text */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 1.6rem;
+/* 🎯 Lists (Hobbies & Dislikes) */
+section {
+  width: 100%;
+  max-width: 600px;
+}
+
+section h3 {
+  font-size: 1.2rem;
+  color: #1b4f72;
+  border-bottom: 2px solid #66a6ff;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+ul {
+  list-style-type: "✨ ";
+  padding-left: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* 🔄 Responsive Layouts */
+@media (min-width: 768px) {
+  article[data-testid="test-profile-card"] {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
   }
 
-  p {
-    font-size: 0.95rem;
+  figure {
+    flex: 1;
   }
 
-  .container {
-    padding: 20px;
+  .content {
+    flex: 2;
   }
+
+  p[data-testid="test-user-bio"] {
+    text-align: left;
+  }
+}
+
+/* ♿ Accessibility & Focus Styles */
+a:focus,
+button:focus,
+img:focus {
+  outline: 3px dashed #66a6ff;
+  outline-offset: 3px;
 }
