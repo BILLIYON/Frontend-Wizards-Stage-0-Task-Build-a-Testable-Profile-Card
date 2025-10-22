@@ -73,7 +73,7 @@ frontend-wizards-stage0/
 
 ## 🌍 Live Demo
 
-🔗 **Live Site:** [https://your-netlify-or-github-pages-link](#)
+🔗 **Live Site:** [https://capable-starlight-f3693e.netlify.app/](#)
 💻 **GitHub Repo:** [https://github.com/your-username/frontend-wizards-stage0](#)
 
 *(Replace the `#` with your actual URLs before submission.)*
